@@ -21,3 +21,5 @@ hermes/data
 ollama/ollama-data
 
 traefik/.env
+
+qbittorrent/config

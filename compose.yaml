@@ -9,5 +9,7 @@ include:
   #- ./ollama/docker-compose.yml
   #- ./n8n/docker-compose.yml
   #- ./traefik/docker-compose.yml
+  - ./qbittorrent/docker-compose.yml
+
 
  

@@ -1,0 +1,30 @@
+services:
+  qbittorrent-nox:
+    image: qbittorrentofficial/qbittorrent-nox:latest
+    container_name: qbittorrent
+    #vvorth:smbshare
+    user: 1000:1001
+    environment:
+      - QBT_LEGAL_NOTICE=confirm
+      - QBT_VERSION=latest
+      - QBT_TORRENTING_PORT=6881
+      - QBT_WEBUI_PORT=8080
+    volumes:
+      - /srv/media/to_download:/torrents:rw
+      - ./config:/config:rw
+      - /srv/media/:/downloads:rw
+    ports:
+      - 6881:6881/tcp
+      - 6881:6881/udp
+      - 8080:8080/tcp
+    read_only: true
+    stop_grace_period: 30m
+    tmpfs:
+      - /tmp
+    tty: true
+    restart: unless-stopped
+#    deploy:
+#      resources:
+#        limits:
+#          memory: 384M
+

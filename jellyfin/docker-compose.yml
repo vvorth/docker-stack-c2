@@ -7,7 +7,7 @@ services:
     #apps-media:Media
     restart: unless-stopped
     #nobody:smbshare
-    user: 65534:1001
+    user: 1000:1001
     environment:
       TZ: ${TZ}
     ports:
