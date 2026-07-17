@@ -1,0 +1,70 @@
+---
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      #- "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "8088:80/tcp"
+      #environment:
+      #PIHOLE_DNS_: "172.27.1.22#5053"
+      # WEBPASSWORD: 'set a secure password here or it will be random'
+      # Volumes store your data between container upgrades
+    volumes:
+      - './pihole/etc-pihole:/etc/pihole'
+      - './pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    #cap_add:
+    #  - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    networks:
+      pihole-network:
+        ipv4_address: "172.27.1.21"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
+
+  dnscrypt-proxy:
+    image: klutchell/dnscrypt-proxy:latest
+    container_name: dns-proxy
+    #entrypoint: /usr/bin/sh -c "update-ca-certificates && dnscrypt-proxy -config /config/dnscrypt-proxy.toml"
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5053:5053/udp"
+      - "5053:5053/tcp"
+    volumes:
+      # - './dnscrypt/rootca/Sophos_home.crt:/usr/local/share/ca-certificates/Sophos_home.crt'
+      - '/etc/ca-certificates/:/etc/ca-certificates/:ro'
+    networks:
+      pihole-network:
+        ipv4_address: "172.27.1.22"
+    
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+
+
+networks:
+  pihole-network:
+    name: pihome-network
+    driver: bridge
+    enable_ipv6: false
+    ipam:
+      config:
+        # Fixed class B CIDR
+        - subnet: "172.27.1.0/24"

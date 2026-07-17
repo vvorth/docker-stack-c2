@@ -1,0 +1,26 @@
+services:
+  jellyfin-c2:
+    container_name: jellyfin-c2
+    #image: jellyfin/jellyfin:latest
+    #image: jellyfin/jellyfin:10.11.11
+    image: jellyfin/jellyfin:12.0-rc2
+    #apps-media:Media
+    restart: unless-stopped
+    #nobody:smbshare
+    user: 65534:1001
+    environment:
+      TZ: ${TZ}
+    ports:
+      - 8096:8096/tcp
+    volumes:
+      - ./config:/config:rw
+      - ./cache:/cache:rw
+      - ${MEDIA_PATH}:/media:ro
+
+    
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
