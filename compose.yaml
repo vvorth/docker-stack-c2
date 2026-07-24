@@ -4,7 +4,7 @@ name: stack-c2
 include:
   - ./jellyfin/docker-compose.yml
   #- ./linkding/docker-compose.yml
-  - ./pihole/docker-compose.yml
+  #- ./pihole/docker-compose.yml
   #- ./hermes/docker-compose.yml
   #- ./ollama/docker-compose.yml
   #- ./n8n/docker-compose.yml

@@ -3,20 +3,25 @@ services:
     container_name: jellyfin-c2
     #image: jellyfin/jellyfin:latest
     #image: jellyfin/jellyfin:10.11.11
-    image: jellyfin/jellyfin:12.0-rc2
+    image: jellyfin/jellyfin:12.0-rc3
     #apps-media:Media
     restart: unless-stopped
     #nobody:smbshare
     user: 1000:1001
     environment:
       TZ: ${TZ}
+      RUSTICL_ENABLE: 'radeonsi'
     ports:
       - 8096:8096/tcp
     volumes:
       - ./config:/config:rw
       - ./cache:/cache:rw
       - ${MEDIA_PATH}:/media:ro
-
+    #transcoding
+    devices:
+      - "/dev/dri:/dev/dri"
+    group_add:
+      - "989"
     
     deploy:
       resources:
