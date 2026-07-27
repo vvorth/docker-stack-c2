@@ -11,6 +11,8 @@ services:
     environment:
       TZ: ${TZ}
       RUSTICL_ENABLE: 'radeonsi'
+    env_file:
+      - .secrets
     ports:
       - 8096:8096/tcp
     volumes:
