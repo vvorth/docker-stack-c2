@@ -31,9 +31,14 @@ services:
       - homepage.group=Tools
       - homepage.name=PiHole
       - homepage.icon=pi-hole
-      - homepage.href=http://localhost:${PORT_PIHOLE}
+      - homepage.href=http://localhost:${PORT_PIHOLE}/admin/login
       - homepage.statusStyle=dot
       - homepage.showStats=true
+      - homepage.widget.type=pihole
+      - homepage.widget.url=http://pihole:${PORT_PIHOLE}
+      - homepage.widget.key=${PIHOLE_API_KEY}
+      - homepage.widget.version=6
+      - homepage.widget.fields=["queries", "blocked", "blocked_percent", "gravity"]
     deploy:
       resources:
         limits:
