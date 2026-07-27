@@ -40,11 +40,11 @@ services:
       - homepage.href=http://localhost:8096
       - homepage.statusStyle=dot
       - homepage.showStats=true
-      - homepage.widget.type=jellyfin
-      - homepage.widget.url=http://jellyfin:8096
-      - homepage.widget.key=${JELLYFIN_API_KEY}
-      - homepage.widget.fields=["movies","series","episodes"]
-      - homepage.widget.enableBlocks=true       # library count blocks are OFF by default
-      - homepage.widget.enableNowPlaying=true   # "now playing" is ON by default
+      #- homepage.widget.type=jellyfin
+      #- homepage.widget.url=http://jellyfin:8096
+      #- homepage.widget.key=${JELLYFIN_API_KEY}
+      #- homepage.widget.fields=["movies","series","episodes"]
+      #- homepage.widget.enableBlocks=true       # library count blocks are OFF by default
+      #- homepage.widget.enableNowPlaying=true   # "now playing" is ON by default
 
 
