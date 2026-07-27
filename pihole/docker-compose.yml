@@ -10,10 +10,10 @@ services:
     env_file:
       - .env
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
+      - "${BIND_DNS_IP_ADDRESS}:53:53/tcp"
+      - "${BIND_DNS_IP_ADDRESS}:53:53/udp"
       #- "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - "8088:80/tcp"
+      - "${PORT_PIHOLE}:80/tcp"
       #environment:
       #PIHOLE_DNS_: "172.27.1.22#5053"
       # WEBPASSWORD: 'set a secure password here or it will be random'
@@ -27,6 +27,13 @@ services:
     networks:
       pihole-network:
         ipv4_address: "172.27.1.21"
+    labels:
+      - homepage.group=Tools
+      - homepage.name=PiHole
+      - homepage.icon=pi-hole
+      - homepage.href=http://localhost:${PORT_PIHOLE}
+      - homepage.statusStyle=dot
+      - homepage.showStats=true
     deploy:
       resources:
         limits:

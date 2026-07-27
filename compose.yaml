@@ -5,7 +5,7 @@ include:
   - ./homepage/docker-compose.yml
   - ./jellyfin/docker-compose.yml
   #- ./linkding/docker-compose.yml
-  #- ./pihole/docker-compose.yml
+  - ./pihole/docker-compose.yml
   #- ./hermes/docker-compose.yml
   #- ./ollama/docker-compose.yml
   #- ./n8n/docker-compose.yml
