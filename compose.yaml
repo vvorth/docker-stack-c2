@@ -2,6 +2,7 @@
 name: stack-c2
 
 include:
+  - ./homepage/docker-compose.yml
   - ./jellyfin/docker-compose.yml
   #- ./linkding/docker-compose.yml
   #- ./pihole/docker-compose.yml

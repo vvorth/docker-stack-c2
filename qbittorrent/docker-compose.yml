@@ -28,3 +28,10 @@ services:
 #        limits:
 #          memory: 384M
 
+    labels:
+      - homepage.group=Media
+      - homepage.name=QBittorrent
+      - homepage.description=Torrent client
+      - homepage.icon=si-docker
+      - homepage.href=http://localhost:8080
+
