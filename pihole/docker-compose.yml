@@ -9,6 +9,7 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+      - .secrets
     ports:
       - "${BIND_DNS_IP_ADDRESS}:53:53/tcp"
       - "${BIND_DNS_IP_ADDRESS}:53:53/udp"

@@ -9,3 +9,10 @@ providers:
 title: Cube Homepage
 customJS: custom.js
 
+layout:
+  Media:
+    style: column
+    columns: 1
+  Tools:
+    style: column
+    columns: 1
