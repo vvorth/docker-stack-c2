@@ -1,0 +1,10 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Tools:
+    - Cockpit:
+        href: http://localhost:9090/
+        icon: cockpit
+        description: Manage host
+

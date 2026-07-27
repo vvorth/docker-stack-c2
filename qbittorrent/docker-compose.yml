@@ -9,6 +9,9 @@ services:
       - QBT_VERSION=latest
       - QBT_TORRENTING_PORT=6881
       - QBT_WEBUI_PORT=8080
+      - TZ=Asia/Tashkent
+    env_file:
+      - .secrets
     volumes:
       - /srv/media/to_download:/torrents:rw
       - ./config:/config:rw
@@ -32,6 +35,16 @@ services:
       - homepage.group=Media
       - homepage.name=QBittorrent
       - homepage.description=Torrent client
-      - homepage.icon=si-docker
+      - homepage.icon=qbittorrent
       - homepage.href=http://localhost:8080
+      - homepage.statusStyle=dot
+      - homepage.showStats=true
+      - homepage.widget.type=qbittorrent
+      - homepage.widget.url=http://qbittorrent:8080
+      - homepage.widget.username=${QB_USER}
+      - homepage.widget.password=${QB_PASSWORD}
+      - homepage.widget.fields=["download","upload"]
+      # optional extras for this widget specifically:
+      - homepage.widget.enableLeechProgress=true   # defaults false
+      - homepage.widget.enableLeechSize=true
 

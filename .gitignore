@@ -1,5 +1,7 @@
 
 !.gitignore
+.secrets
+
 #inpx-web
 inpx-web/data
 #n8n
@@ -23,3 +25,5 @@ ollama/ollama-data
 traefik/.env
 
 qbittorrent/config
+
+homepage/config/*
