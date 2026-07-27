@@ -35,7 +35,8 @@ services:
       - homepage.statusStyle=dot
       - homepage.showStats=true
       - homepage.widget.type=pihole
-      - homepage.widget.url=http://pihole:${PORT_PIHOLE}
+      # internal container port
+      - homepage.widget.url=http://pihole:80
       - homepage.widget.key=${PIHOLE_API_KEY}
       - homepage.widget.version=6
       - homepage.widget.fields=["queries", "blocked", "blocked_percent", "gravity"]
