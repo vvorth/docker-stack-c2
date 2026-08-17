@@ -1,6 +1,7 @@
 
 !.gitignore
 .secrets
+.env
 
 #inpx-web
 inpx-web/data
