@@ -27,3 +27,5 @@ traefik/.env
 qbittorrent/config
 
 homepage/config/*
+
+uptime-kuma/data/

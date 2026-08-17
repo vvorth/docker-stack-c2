@@ -4,7 +4,7 @@ services:
     container_name: homepage
     environment:
       TZ: ${TZ}
-      HOMEPAGE_ALLOWED_HOSTS: cube.netbird.cloud,cube.newt-in.ts.net,192.168.0.14,172.17.17.191 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+      HOMEPAGE_ALLOWED_HOSTS: cube,cube.netbird.cloud,cube.newt-in.ts.net,192.168.0.14,172.17.17.191 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
       #PUID: 1000 # optional, your user id
       #PGID: 1000 # optional, your group id
     ports:

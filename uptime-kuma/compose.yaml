@@ -1,0 +1,20 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:next-slim
+    container_name: uptime-kuma
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      # <Host Port>:<Container Port>
+      - "3001:3001"
+    labels:
+      - homepage.group=Tools
+      - homepage.name=Uptime Kuma
+      - homepage.description=Uptime Monitoring
+      - homepage.icon=uptime-kuma
+      - homepage.href=http://localhost:3001
+      - homepage.statusStyle=dot
+      - homepage.showStats=true
+

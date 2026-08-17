@@ -11,6 +11,6 @@ include:
   #- ./n8n/docker-compose.yml
   #- ./traefik/docker-compose.yml
   - ./qbittorrent/docker-compose.yml
-
+  - ./uptime-kuma/compose.yaml
 
  
