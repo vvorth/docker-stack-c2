@@ -2,15 +2,16 @@
 name: stack-c2
 
 include:
-  - ./homepage/docker-compose.yml
-  - ./jellyfin/docker-compose.yml
-  #- ./linkding/docker-compose.yml
-  - ./pihole/docker-compose.yml
-  #- ./hermes/docker-compose.yml
-  #- ./ollama/docker-compose.yml
-  #- ./n8n/docker-compose.yml
-  #- ./traefik/docker-compose.yml
-  - ./qbittorrent/docker-compose.yml
+  - ./homepage/compose.yaml
+  - ./jellyfin/compose.yaml
+  #- ./linkding/compose.yaml
+  - ./pihole/compose.yaml
+  #- ./hermes/compose.yaml
+  #- ./ollama/compose.yaml
+  #- ./n8n/compose.yaml
+  #- ./traefik/compose.yaml
+  - ./qbittorrent/compose.yaml
   - ./uptime-kuma/compose.yaml
+  - ./ollama/compose.yaml
 
  

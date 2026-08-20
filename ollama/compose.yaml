@@ -1,0 +1,14 @@
+services:
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:0.32.5
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama-data:/root/.ollama
+    deploy:
+      resources:
+        limits:
+          memory: 12G
+          cpus: 8
+
