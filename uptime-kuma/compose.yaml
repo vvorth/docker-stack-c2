@@ -14,7 +14,7 @@ services:
       - homepage.name=Uptime Kuma
       - homepage.description=Uptime Monitoring
       - homepage.icon=uptime-kuma
-      - homepage.href=http://localhost:3001
+      - homepage.href=http://localhost:3001/status/main
       - homepage.statusStyle=dot
       - homepage.showStats=true
 
