@@ -6,12 +6,15 @@
   - Github:
     - abbr: GH
       href: https://github.com/vvorth/
+      icon: github
 
 - VPN:
   - Netbird:
     - abbr: NB
       href: https://app.netbird.io/peers
+      icon: netbird
   - Tailscale:
     - abbr: TS
       href: https://console.tailscale.com/admin/machines
+      icon: tailscale
 
