@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Developer:
+  - Github:
+    - abbr: GH
+      href: https://github.com/vvorth/
+
+- VPN:
+  - Netbird:
+    - abbr: NB
+      href: https://app.netbird.io/peers
+  - Tailscale:
+    - abbr: TS
+      href: https://console.tailscale.com/admin/machines
+
