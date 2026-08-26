@@ -35,12 +35,12 @@ services:
       - homepage.href=http://localhost:${PORT_PIHOLE}/admin/login
       - homepage.statusStyle=dot
       - homepage.showStats=true
-      - homepage.widget.type=pihole
-      # internal container port
-      - homepage.widget.url=http://pihole:80
-      - homepage.widget.key=${PIHOLE_API_KEY}
-      - homepage.widget.version=6
-      - homepage.widget.fields=["queries", "blocked", "blocked_percent", "gravity"]
+      # - homepage.widget.type=pihole
+      # # internal container port
+      # - homepage.widget.url=http://pihole:80
+      # - homepage.widget.key=${PIHOLE_API_KEY}
+      # - homepage.widget.version=6
+      # - homepage.widget.fields=["queries", "blocked", "blocked_percent", "gravity"]
     deploy:
       resources:
         limits:
