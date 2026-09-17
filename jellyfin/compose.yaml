@@ -9,12 +9,15 @@ services:
     #nobody:smbshare
     user: 1000:1001
     environment:
+      JELLYFIN_PublishedServerUrl: "http://192.168.0.14:8096"
       TZ: ${TZ}
       RUSTICL_ENABLE: 'radeonsi'
     env_file:
       - .secrets
     ports:
       - 8096:8096/tcp
+      - 7359:7359/udp
+      - 1900:1900/udp
     volumes:
       - ./config:/config:rw
       - ./cache:/cache:rw
