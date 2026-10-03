@@ -6,6 +6,8 @@ services:
       - "11434:11434"
     volumes:
       - ./ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_CONTEXT_LENGTH=262144
     deploy:
       resources:
         limits:
