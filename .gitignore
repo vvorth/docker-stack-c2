@@ -33,3 +33,6 @@ uptime-kuma/data/
 
 ollama/ollama-data/
 
+garmin-wf-builder/vendor/
+garmin-wf-builder/data/
+

@@ -13,5 +13,6 @@ include:
   - ./qbittorrent/compose.yaml
   - ./uptime-kuma/compose.yaml
   - ./ollama/compose.yaml
+  - ./garmin-wf-builder/compose.yaml
 
  
