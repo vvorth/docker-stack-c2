@@ -3,21 +3,21 @@
 services:
   garmin-wf-builder:
     container_name: garmin-wf-builder
+    image: garmin-wf-builder:${VERSION:-main}
     build:
       context: https://github.com/vvorth/garmin-wf-builder.git#${VERSION:-main}
       dockerfile: Dockerfile
-    image: garmin-wf-builder:${VERSION:-main}
     pull_policy: build
     user: 1000:1000
     restart: unless-stopped
-    command: ["studio", "--host=0.0.0.0", "--port=8765"]
+    command: ["studio", "--host=0.0.0.0", "--port=8765" ]
     ports:
       - 8765:8765
     volumes:
       - ./vendor/devices:/devices:ro
       - ./vendor/fonts:/fonts:ro
       - ./data:/state:rw
-      - wfb-keys:/keys:rw
+      - ./keys:/keys:rw
     labels:
       - homepage.group=Media
       - homepage.name=Garmin WF Builder
@@ -34,7 +34,7 @@ services:
         reservations:
           memory: 1G
     
-volumes:
-  wfb-keys:
-    external: true
+# volumes:
+#   wfb-keys:
+#     external: true
 
