@@ -14,5 +14,5 @@ include:
   - ./uptime-kuma/compose.yaml
   - ./ollama/compose.yaml
   - ./garmin-wf-builder/compose.yaml
-
+  - ./inpx-shelf/compose.yaml
  
