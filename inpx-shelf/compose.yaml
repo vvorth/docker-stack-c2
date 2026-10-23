@@ -1,13 +1,7 @@
 services:
   inpx-shelf:
     container_name: inpx-shelf
-    image: vvorth/inpx-shelf:${VERSION:-latest}
-    # build:
-    #   context: https://github.com/vvorth/inpx-shelf.git#${VERSION:-main}
-    #   dockerfile: Dockerfile
-    # image: inpx-shelf:${VERSION:-main}
-    # pull_policy: build
-
+    image: vvorth/inpx-shelf:dev
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -18,6 +12,7 @@ services:
       - "12380:12380"
     volumes:
       - ./data:${DATA_DIR}:rw
+      - ./cache:${CACHE_DIR}:rw
       - ./${FB2CNG_CONFIG}:${INPX_FB2CNG_CONFIG}:ro
       - ${MEDIA_PATH}:${LIBDIR}:ro
       - ${MEDIA_PATH_2}:${LIBDIR_2}:ro
