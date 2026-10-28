@@ -1,13 +1,13 @@
 services:
   ollama:
     container_name: ollama
-    image: ollama/ollama:0.32.5
+    image: ollama/ollama:0.40.11
     ports:
       - "11434:11434"
     volumes:
       - ./ollama-data:/root/.ollama
-    environment:
-      - OLLAMA_CONTEXT_LENGTH=262144
+    env_file:
+      - ./.env
     deploy:
       resources:
         limits:
