@@ -15,8 +15,9 @@ services:
       - ./cache:${CACHE_DIR}:rw
       - ./${FB2CNG_CONFIG}:${INPX_FB2CNG_CONFIG}:ro
       - ${MEDIA_PATH}:${LIBDIR}:ro
-      - ${MEDIA_PATH_2}:${LIBDIR_2}:ro
+      # - ${MEDIA_PATH_2}:${LIBDIR_2}:ro
       - ${MEDIA_PATH_3}:${LIBDIR_3}:ro
+      - ${MEDIA_CUSTOM}:${LIBDIR_4}:ro
     labels:
       - homepage.group=Media
       - homepage.name=Inpx-Shelf Library

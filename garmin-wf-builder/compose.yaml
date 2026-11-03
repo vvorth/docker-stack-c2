@@ -10,9 +10,7 @@ services:
     ports:
       - 8765:8765
     volumes:
-      - ./vendor/devices:/devices:ro
-      - ./vendor/fonts:/fonts:ro
-      - ./data:/state:rw
+      - ./vendor:/vendor:rw
       - ./keys:/keys:rw
     labels:
       - homepage.group=Media
