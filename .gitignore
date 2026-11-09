@@ -40,3 +40,6 @@ garmin-wf-builder/keys/
 inpx-shelf/data
 inpx-shelf/cache
 
+xen-orchestra/redis-data
+xen-orchestra/xo-data
+

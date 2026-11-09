@@ -6,6 +6,7 @@ services:
       - "11434:11434"
     volumes:
       - ./ollama-data:/root/.ollama
+      - /srv/media/ollama-models:/root/.ollama/models
     env_file:
       - ./.env
     deploy:

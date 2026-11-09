@@ -7,11 +7,12 @@ include:
   #- ./linkding/compose.yaml
   - ./pihole/compose.yaml
   #- ./hermes/compose.yaml
-  - ./ollama/compose.yaml
+  # - ./ollama/compose.yaml
   #- ./n8n/compose.yaml
-  #- ./traefik/compose.yaml
   - ./qbittorrent/compose.yaml
-  # - ./uptime-kuma/compose.yaml
   - ./garmin-wf-builder/compose.yaml
   - ./inpx-shelf/compose.yaml
+  # - ./xen-orchestra/compose.yaml
+  - ./hermes/compose.yaml
+
  
