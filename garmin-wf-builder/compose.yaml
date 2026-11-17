@@ -16,7 +16,7 @@ services:
       - homepage.group=Media
       - homepage.name=Garmin WF Builder
       - homepage.description=Watchface editor
-      - homepage.icon=editor
+      - homepage.icon=mdi-watch-export
       - homepage.href=http://localhost:8765
       - homepage.statusStyle=dot
       - homepage.showStats=true

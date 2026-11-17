@@ -1,0 +1,22 @@
+services:
+  gatus:
+    image: ghcr.io/twin/gatus:stable
+    container_name: gatus
+    volumes:
+      - ./config.yaml:/config/config.yaml:ro
+      - ./data:/data:rw
+    ports:
+      - "8082:8080"
+    restart: unless-stopped
+    # user: "0:0"
+    # cap_add:
+    #   - NET_RAW
+
+    labels:
+      - homepage.group=Tools
+      - homepage.name=Gatus
+      - homepage.description=Uptime monitor
+      - homepage.icon=gatus
+      - homepage.href=http://localhost:8082
+      - homepage.statusStyle=dot
+      - homepage.showStats=true

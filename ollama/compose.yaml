@@ -1,7 +1,7 @@
 services:
   ollama:
     container_name: ollama
-    image: ollama/ollama:0.40.11
+    image: ollama/ollama:0.40.16
     ports:
       - "11434:11434"
     volumes:
